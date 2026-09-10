@@ -1,0 +1,5134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KKW B.Ed Digital Hub</title>
+
+<style>
+:root{
+  --navy:#0f172a;
+  --navy2:#172554;
+  --blue:#2563eb;
+  --blue2:#1d4ed8;
+  --sky:#eff6ff;
+  --green:#059669;
+  --greenbg:#ecfdf5;
+  --red:#dc2626;
+  --redbg:#fef2f2;
+  --orange:#d97706;
+  --orangebg:#fffbeb;
+  --purple:#7c3aed;
+  --purplebg:#f5f3ff;
+  --text:#172033;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --bg:#f8fafc;
+  --white:#fff;
+  --shadow:0 8px 30px rgba(15,23,42,.07);
+  --radius:14px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  min-height:100%;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* LOGIN */
+
+#loginScreen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:
+    radial-gradient(circle at top right,#dbeafe 0,transparent 35%),
+    radial-gradient(circle at bottom left,#e0e7ff 0,transparent 30%),
+    #f8fafc;
+}
+
+.login-card{
+  width:100%;
+  max-width:470px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 20px 60px rgba(15,23,42,.12);
+  padding:32px;
+}
+
+.logo-box{
+  width:62px;
+  height:62px;
+  border-radius:16px;
+  background:var(--navy);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+.login-title{
+  font-size:28px;
+  font-weight:800;
+  color:var(--navy);
+}
+
+.login-sub{
+  color:var(--muted);
+  margin-top:6px;
+  margin-bottom:26px;
+}
+
+.demo-box{
+  margin-top:18px;
+  padding:14px;
+  border-radius:12px;
+  background:var(--sky);
+  border:1px solid #dbeafe;
+  font-size:13px;
+  color:#334155;
+  line-height:1.7;
+}
+
+/* FORM */
+
+.form-group{
+  margin-bottom:16px;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  color:#334155;
+  margin-bottom:7px;
+}
+
+input,select,textarea{
+  width:100%;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  border-radius:9px;
+  padding:11px 12px;
+  color:var(--text);
+  outline:none;
+  transition:.2s;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+/* BUTTONS */
+
+.btn{
+  border:0;
+  border-radius:9px;
+  padding:10px 15px;
+  font-weight:700;
+  transition:.18s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-primary{
+  background:var(--blue);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--blue2);
+}
+
+.btn-dark{
+  background:var(--navy);
+  color:#fff;
+}
+
+.btn-light{
+  background:#f1f5f9;
+  color:#334155;
+}
+
+.btn-success{
+  background:var(--green);
+  color:#fff;
+}
+
+.btn-danger{
+  background:var(--red);
+  color:#fff;
+}
+
+.btn-warning{
+  background:var(--orange);
+  color:#fff;
+}
+
+.btn-outline{
+  background:#fff;
+  border:1px solid var(--border);
+  color:#334155;
+}
+
+.btn-sm{
+  padding:7px 10px;
+  font-size:12px;
+}
+
+.full{
+  width:100%;
+}
+
+/* APP */
+
+#appShell{
+  min-height:100vh;
+  display:flex;
+}
+
+.sidebar{
+  width:250px;
+  background:var(--navy);
+  color:#fff;
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  z-index:100;
+  overflow-y:auto;
+  transition:.25s;
+}
+
+.brand{
+  height:76px;
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.brand-icon{
+  width:40px;
+  height:40px;
+  background:#fff;
+  color:var(--navy);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:13px;
+}
+
+.brand-title{
+  font-weight:800;
+  font-size:15px;
+}
+
+.brand-sub{
+  font-size:10px;
+  opacity:.6;
+  margin-top:3px;
+}
+
+.nav{
+  padding:18px 12px;
+}
+
+.nav-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#94a3b8;
+  padding:12px 10px 7px;
+  font-weight:700;
+}
+
+.nav button{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#cbd5e1;
+  text-align:left;
+  padding:11px 12px;
+  border-radius:9px;
+  margin-bottom:3px;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav button:hover{
+  background:rgba(255,255,255,.07);
+  color:#fff;
+}
+
+.nav button.active{
+  background:#1d4ed8;
+  color:#fff;
+}
+
+.main{
+  margin-left:250px;
+  width:calc(100% - 250px);
+  min-height:100vh;
+}
+
+.topbar{
+  height:76px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.top-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.mobile-toggle{
+  display:none;
+  border:0;
+  background:#f1f5f9;
+  border-radius:8px;
+  width:38px;
+  height:38px;
+}
+
+.page-title{
+  font-size:20px;
+  font-weight:800;
+}
+
+.page-subtitle{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.user-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.role-badge{
+  padding:7px 10px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.user-name{
+  font-size:13px;
+  font-weight:700;
+}
+
+.content{
+  padding:28px;
+  max-width:1600px;
+  margin:auto;
+}
+
+/* PAGE */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.section-title{
+  font-size:18px;
+  font-weight:800;
+}
+
+.section-desc{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+/* CARDS */
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:22px;
+}
+
+.stat-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.stat-label{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+}
+
+.stat-value{
+  font-size:28px;
+  font-weight:800;
+  color:var(--navy);
+  margin-top:8px;
+}
+
+.stat-note{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+  margin-bottom:18px;
+}
+
+.card-title{
+  font-size:15px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+/* TABLE */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
+}
+
+th{
+  background:#f8fafc;
+  color:#475569;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.3px;
+  text-align:left;
+  padding:12px;
+  border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+
+td{
+  padding:11px 12px;
+  border-bottom:1px solid #edf2f7;
+  font-size:12px;
+  vertical-align:middle;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+tr:hover td{
+  background:#fafcff;
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 8px;
+  border-radius:7px;
+  font-size:10px;
+  font-weight:800;
+}
+
+.present{
+  color:#047857;
+  background:#d1fae5;
+}
+
+.absent{
+  color:#b91c1c;
+  background:#fee2e2;
+}
+
+.pending{
+  color:#92400e;
+  background:#fef3c7;
+}
+
+/* FILTER */
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  align-items:end;
+}
+
+.filter-item label{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  color:#475569;
+  margin-bottom:6px;
+}
+
+.report-highlight{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  margin:15px 0;
+}
+
+.highlight-box{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:15px;
+  background:#fff;
+}
+
+.highlight-box .small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.highlight-box .big{
+  font-size:22px;
+  font-weight:800;
+  margin-top:5px;
+}
+
+/* LIST */
+
+.notice-item,.resource-item{
+  padding:13px 0;
+  border-bottom:1px solid #edf2f7;
+}
+
+.notice-item:last-child,.resource-item:last-child{
+  border-bottom:0;
+}
+
+.notice-title{
+  font-weight:800;
+  font-size:13px;
+}
+
+.notice-meta{
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px;
+}
+
+.note-body{
+  white-space:pre-wrap;
+  color:#475569;
+  line-height:1.6;
+  font-size:12px;
+  margin-top:7px;
+}
+
+/* CALENDAR */
+
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:7px;
+}
+
+.cal-head{
+  text-align:center;
+  font-size:10px;
+  font-weight:800;
+  color:var(--muted);
+  padding:7px;
+}
+
+.cal-day{
+  min-height:82px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:7px;
+  background:#fff;
+}
+
+.cal-day.today{
+  border:2px solid var(--blue);
+}
+
+.cal-date{
+  font-weight:800;
+  font-size:12px;
+}
+
+.cal-holiday{
+  margin-top:6px;
+  font-size:9px;
+  color:#b91c1c;
+  background:#fef2f2;
+  padding:4px;
+  border-radius:5px;
+}
+
+.cal-working{
+  margin-top:6px;
+  font-size:9px;
+  color:#047857;
+}
+
+/* ATTENDANCE */
+
+.attendance-toolbar{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.attendance-summary{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+
+.summary-pill{
+  padding:8px 11px;
+  border-radius:8px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  font-size:11px;
+  font-weight:700;
+}
+
+.status-select{
+  min-width:120px;
+}
+
+/* MODAL */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:500;
+  padding:20px;
+}
+
+.modal-overlay.show{
+  display:flex;
+}
+
+.modal{
+  background:#fff;
+  width:100%;
+  max-width:760px;
+  max-height:90vh;
+  overflow-y:auto;
+  border-radius:16px;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:2;
+}
+
+.modal-title{
+  font-weight:800;
+}
+
+.close-btn{
+  border:0;
+  background:#f1f5f9;
+  width:32px;
+  height:32px;
+  border-radius:8px;
+}
+
+.modal-body{
+  padding:20px;
+}
+
+.modal-footer{
+  padding:15px 20px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+}
+
+/* TOAST */
+
+#toast{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1000;
+  background:var(--navy);
+  color:#fff;
+  padding:12px 16px;
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  font-size:12px;
+  transform:translateY(100px);
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+}
+
+#toast.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* EMPTY */
+
+.empty{
+  text-align:center;
+  padding:35px 15px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.info-banner{
+  padding:13px 15px;
+  background:#eff6ff;
+  border:1px solid #dbeafe;
+  color:#1e40af;
+  border-radius:10px;
+  font-size:12px;
+  margin-bottom:18px;
+}
+
+.warning-banner{
+  padding:13px 15px;
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  color:#92400e;
+  border-radius:10px;
+  font-size:12px;
+  margin-bottom:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px){
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dashboard-grid{
+    grid-template-columns:1fr;
+  }
+
+  .filter-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .report-highlight{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:760px){
+  .sidebar{
+    transform:translateX(-100%);
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .mobile-toggle{
+    display:block;
+  }
+
+  .topbar{
+    padding:0 15px;
+  }
+
+  .content{
+    padding:17px;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .filter-grid{
+    grid-template-columns:1fr;
+  }
+
+  .report-highlight{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .user-name{
+    display:none;
+  }
+
+  .login-card{
+    padding:24px;
+  }
+}
+
+@media(max-width:480px){
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .report-highlight{
+    grid-template-columns:1fr;
+  }
+
+  .page-title{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="toast"></div>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="logo-box">KKW</div>
+    <div class="login-title">KKW B.Ed Digital Hub</div>
+    <div class="login-sub">Student Academic Portal</div>
+
+    <div class="form-group">
+      <label>Login As</label>
+      <select id="loginRole" onchange="changeLoginRole()">
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+        <option value="admin">Administrator</option>
+      </select>
+    </div>
+
+    <div id="teacherLoginFields">
+      <div class="form-group">
+        <label>Select Teacher</label>
+        <select id="teacherLoginSelect"></select>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input id="teacherLoginPass" type="password" placeholder="Enter teacher password">
+      </div>
+    </div>
+
+    <div id="studentLoginFields" class="hidden">
+      <div class="form-group">
+        <label>Student Roll No.</label>
+        <input id="studentLoginRoll" placeholder="Example: 01">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input id="studentLoginPass" type="password" placeholder="Enter student password">
+      </div>
+    </div>
+
+    <div id="adminLoginFields" class="hidden">
+      <div class="form-group">
+        <label>Master Password</label>
+        <input id="adminLoginPass" type="password" placeholder="Enter master password">
+      </div>
+    </div>
+
+    <button class="btn btn-primary full" onclick="login()">Login</button>
+
+    <div class="demo-box">
+      <b>Demo Credentials</b><br>
+      Admin: <b>KKWAGH</b><br>
+      Teacher 01: <b>teacher01</b><br>
+      Teacher 02: <b>teacher02</b><br>
+      Teacher 03: <b>teacher03</b><br>
+      Student Roll 01: <b>student01</b>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appShell" class="hidden">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">KKW</div>
+      <div>
+        <div class="brand-title">B.Ed Digital Hub</div>
+        <div class="brand-sub">Student Academic Portal</div>
+      </div>
+    </div>
+
+    <div class="nav">
+
+      <div class="nav-label">Main</div>
+
+      <button data-page="dashboard" onclick="navigate('dashboard')">▣ Dashboard</button>
+      <button data-page="attendance" class="role-teacher" onclick="navigate('attendance')">✓ Attendance</button>
+      <button data-page="reports" onclick="navigate('reports')">▤ Attendance Reports</button>
+
+      <div class="nav-label">Academic</div>
+
+      <button data-page="students" class="role-admin" onclick="navigate('students')">♙ Students</button>
+      <button data-page="teachers" class="role-admin" onclick="navigate('teachers')">♙ Teachers</button>
+      <button data-page="calendar" onclick="navigate('calendar')">□ Calendar</button>
+      <button data-page="notices" onclick="navigate('notices')">! Notices</button>
+      <button data-page="notes" onclick="navigate('notes')">▤ Notes</button>
+      <button data-page="pyqs" onclick="navigate('pyqs')">▱ PYQs</button>
+      <button data-page="videos" onclick="navigate('videos')">▶ Videos</button>
+      <button data-page="resources" onclick="navigate('resources')">↗ Resources</button>
+
+      <div class="nav-label role-admin">Administration</div>
+
+      <button data-page="data" class="role-admin" onclick="navigate('data')">⚙ Data Management</button>
+
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="top-left">
+        <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+        <div>
+          <div class="page-title" id="topPageTitle">Dashboard</div>
+          <div class="page-subtitle">KKW B.Ed College Academic Portal</div>
+        </div>
+      </div>
+
+      <div class="user-area">
+        <span class="role-badge" id="roleBadge">Teacher</span>
+        <span class="user-name" id="sessionName"></span>
+        <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <section id="page-dashboard" class="page active"></section>
+
+      <!-- ATTENDANCE -->
+      <section id="page-attendance" class="page"></section>
+
+      <!-- REPORTS -->
+      <section id="page-reports" class="page"></section>
+
+      <!-- STUDENTS -->
+      <section id="page-students" class="page"></section>
+
+      <!-- TEACHERS -->
+      <section id="page-teachers" class="page"></section>
+
+      <!-- CALENDAR -->
+      <section id="page-calendar" class="page"></section>
+
+      <!-- NOTICES -->
+      <section id="page-notices" class="page"></section>
+
+      <!-- NOTES -->
+      <section id="page-notes" class="page"></section>
+
+      <!-- PYQS -->
+      <section id="page-pyqs" class="page"></section>
+
+      <!-- VIDEOS -->
+      <section id="page-videos" class="page"></section>
+
+      <!-- RESOURCES -->
+      <section id="page-resources" class="page"></section>
+
+      <!-- DATA -->
+      <section id="page-data" class="page"></section>
+
+    </div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="modalTitle">Modal</div>
+      <button class="close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   EMBEDDED DATA
+   Generate Updated App replaces this section.
+   ========================================================= */
+
+const EMBEDDED_DATA=/*__EMBEDDED_DATA__*/{
+  version:1,
+  initialized:false,
+  seedDemo:true,
+  masterPass:"KKWAGH",
+  teachers:[],
+  students:[],
+  attendance:[],
+  holidays:[],
+  notices:[],
+  notes:[],
+  pyqs:[],
+  videos:[],
+  resources:[]
+}/*__EMBEDDED_DATA_END__*/;
+
+
+/* =========================================================
+   CONSTANTS / SESSION
+   ========================================================= */
+
+const STORAGE_KEY="kkw_bed_digital_hub_v2";
+let DATA=loadData();
+
+let SESSION={
+  role:null,
+  userId:null,
+  name:null,
+  subject:null
+};
+
+let CURRENT_PAGE="dashboard";
+
+
+/* =========================================================
+   BASIC UTILITIES
+   ========================================================= */
+
+function clone(obj){
+  return JSON.parse(JSON.stringify(obj));
+}
+
+function uid(prefix="id"){
+  return prefix+"_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,8);
+}
+
+function esc(value){
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+function today(){
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,"0");
+  const day=String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${day}`;
+}
+
+function formatDate(date){
+  if(!date) return "-";
+  const d=new Date(date+"T00:00:00");
+  if(Number.isNaN(d.getTime())) return date;
+  return d.toLocaleDateString("en-IN",{
+    day:"2-digit",
+    month:"short",
+    year:"numeric"
+  });
+}
+
+function formatDateTime(date){
+  if(!date) return "-";
+  const d=new Date(date);
+  if(Number.isNaN(d.getTime())) return date;
+  return d.toLocaleString("en-IN");
+}
+
+function saveData(){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(DATA));
+}
+
+function toast(message){
+  const el=document.getElementById("toast");
+  el.textContent=message;
+  el.classList.add("show");
+
+  clearTimeout(window.__toastTimer);
+
+  window.__toastTimer=setTimeout(()=>{
+    el.classList.remove("show");
+  },2600);
+}
+
+function openModal(title,body,footer=""){
+  document.getElementById("modalTitle").textContent=title;
+  document.getElementById("modalBody").innerHTML=body;
+  document.getElementById("modalFooter").innerHTML=footer;
+  document.getElementById("modalOverlay").classList.add("show");
+}
+
+function closeModal(){
+  document.getElementById("modalOverlay").classList.remove("show");
+}
+
+function safeUrl(url){
+  const value=String(url||"").trim();
+  if(/^https?:\/\//i.test(value)) return value;
+  return "#";
+}
+
+function isWeekend(date){
+  const d=new Date(date+"T00:00:00");
+  return d.getDay()===0;
+}
+
+
+/* =========================================================
+   DATA NORMALIZATION
+   ========================================================= */
+
+function normalizeData(d){
+  d=d||{};
+
+  const keys=[
+    "teachers",
+    "students",
+    "attendance",
+    "holidays",
+    "notices",
+    "notes",
+    "pyqs",
+    "videos",
+    "resources"
+  ];
+
+  keys.forEach(k=>{
+    if(!Array.isArray(d[k])) d[k]=[];
+  });
+
+  if(!d.masterPass) d.masterPass="KKWAGH";
+
+  return d;
+}
+
+
+/* =========================================================
+   DEMO DATA
+   ========================================================= */
+
+function buildDemoData(){
+
+  const d={
+    version:1,
+    initialized:true,
+    seedDemo:false,
+    masterPass:"KKWAGH",
+    teachers:[],
+    students:[],
+    attendance:[],
+    holidays:[],
+    notices:[],
+    notes:[],
+    pyqs:[],
+    videos:[],
+    resources:[]
+  };
+
+  d.teachers=[
+    {
+      id:"t1",
+      name:"Demo Teacher 01",
+      subject:"Educational Psychology",
+      password:"teacher01",
+      active:true
+    },
+    {
+      id:"t2",
+      name:"Demo Teacher 02",
+      subject:"Marathi",
+      password:"teacher02",
+      active:true
+    },
+    {
+      id:"t3",
+      name:"Demo Teacher 03",
+      subject:"ICT",
+      password:"teacher03",
+      active:true
+    }
+  ];
+
+  for(let i=1;i<=10;i++){
+    const n=String(i).padStart(2,"0");
+
+    d.students.push({
+      id:"s"+i,
+      roll:n,
+      name:"Demo Student "+n,
+      className:"B.Ed Second Year",
+      password:"student"+n,
+      active:true
+    });
+  }
+
+  d.holidays=[
+    {
+      id:"h1",
+      title:"Independence Day",
+      start:"2026-08-15",
+      end:"2026-08-15",
+      type:"Holiday"
+    },
+    {
+      id:"h2",
+      title:"Ganesh Chaturthi",
+      start:"2026-08-27",
+      end:"2026-08-27",
+      type:"Holiday"
+    },
+    {
+      id:"h3",
+      title:"Ganesh Visarjan",
+      start:"2026-09-05",
+      end:"2026-09-05",
+      type:"Holiday"
+    },
+    {
+      id:"h4",
+      title:"Diwali Vacation",
+      start:"2026-11-09",
+      end:"2026-11-18",
+      type:"Vacation"
+    },
+    {
+      id:"h5",
+      title:"Christmas",
+      start:"2026-12-25",
+      end:"2026-12-25",
+      type:"Holiday"
+    },
+    {
+      id:"h6",
+      title:"Republic Day",
+      start:"2027-01-26",
+      end:"2027-01-26",
+      type:"Holiday"
+    },
+    {
+      id:"h7",
+      title:"Shiv Jayanti",
+      start:"2027-02-19",
+      end:"2027-02-19",
+      type:"Holiday"
+    }
+  ];
+
+  d.notices=[
+    {
+      id:"n1",
+      title:"Welcome to KKW B.Ed Digital Hub",
+      body:"This portal provides attendance, notices, notes, PYQs, videos and academic resources.",
+      date:"2026-06-01",
+      priority:"Normal"
+    },
+    {
+      id:"n2",
+      title:"Attendance Information",
+      body:"Students are advised to check their attendance regularly through the Attendance Reports section.",
+      date:"2026-06-05",
+      priority:"Important"
+    },
+    {
+      id:"n3",
+      title:"Academic Resources Updated",
+      body:"New notes and previous-year-question resources are available in the Academic section.",
+      date:"2026-06-10",
+      priority:"Normal"
+    }
+  ];
+
+  d.notes=[
+    {
+      id:"note1",
+      title:"Educational Psychology - Unit 1",
+      subject:"Educational Psychology",
+      description:"Introduction and basic concepts.",
+      url:""
+    },
+    {
+      id:"note2",
+      title:"Marathi - Language Development",
+      subject:"Marathi",
+      description:"Important classroom notes for language development.",
+      url:""
+    },
+    {
+      id:"note3",
+      title:"ICT - Teaching with Technology",
+      subject:"ICT",
+      description:"Basic concepts of ICT integration in education.",
+      url:""
+    }
+  ];
+
+  d.pyqs=[
+    {
+      id:"p1",
+      title:"B.Ed Previous Year Questions",
+      subject:"Educational Psychology",
+      year:"2025",
+      url:""
+    },
+    {
+      id:"p2",
+      title:"Marathi Previous Year Questions",
+      subject:"Marathi",
+      year:"2025",
+      url:""
+    }
+  ];
+
+  d.videos=[
+    {
+      id:"v1",
+      title:"Educational Psychology Lecture",
+      subject:"Educational Psychology",
+      url:"https://www.youtube.com/",
+      description:"Demo video resource."
+    },
+    {
+      id:"v2",
+      title:"ICT Introduction",
+      subject:"ICT",
+      url:"https://www.youtube.com/",
+      description:"Demo video resource."
+    }
+  ];
+
+  d.resources=[
+    {
+      id:"r1",
+      title:"University Academic Resource",
+      category:"Academic",
+      url:"https://www.unipune.ac.in/",
+      description:"External academic resource."
+    },
+    {
+      id:"r2",
+      title:"Digital Learning Resource",
+      category:"Learning",
+      url:"https://swayam.gov.in/",
+      description:"Online learning resource."
+    }
+  ];
+
+  generateDemoAttendance(d);
+
+  return d;
+}
+
+
+/* =========================================================
+   DEMO ATTENDANCE GENERATOR
+   ========================================================= */
+
+function dateBetween(start,end,callback){
+
+  let current=new Date(start+"T00:00:00");
+  const last=new Date(end+"T00:00:00");
+
+  while(current<=last){
+
+    const iso=
+      current.getFullYear()+"-"+
+      String(current.getMonth()+1).padStart(2,"0")+"-"+
+      String(current.getDate()).padStart(2,"0");
+
+    callback(iso,current);
+
+    current.setDate(current.getDate()+1);
+  }
+}
+
+function holidayForDate(date,d=DATA){
+
+  return d.holidays.find(h=>{
+    return date>=h.start && date<=h.end;
+  })||null;
+}
+
+function generateDemoAttendance(d){
+
+  const schedule={
+    t1:[1,3],
+    t2:[2,4],
+    t3:[5,6]
+  };
+
+  dateBetween("2026-06-01","2027-04-30",(date,obj)=>{
+
+    if(obj.getDay()===0) return;
+    if(holidayForDate(date,d)) return;
+
+    const day=obj.getDay();
+
+    d.teachers.forEach((teacher,teacherIndex)=>{
+
+      if(!schedule[teacher.id].includes(day)) return;
+
+      d.students.forEach((student,studentIndex)=>{
+
+        const dayNumber=obj.getDate();
+
+        const present=
+          ((studentIndex*3+dayNumber+teacherIndex)%7)!==0;
+
+        d.attendance.push({
+          id:uid("att"),
+          date,
+          teacherId:teacher.id,
+          teacherName:teacher.name,
+          subject:teacher.subject,
+          studentId:student.id,
+          roll:student.roll,
+          studentName:student.name,
+          status:present?"Present":"Absent",
+          savedAt:date+"T09:00:00"
+        });
+
+      });
+    });
+
+  });
+}
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
+
+function loadData(){
+
+  try{
+    const saved=localStorage.getItem(STORAGE_KEY);
+
+    if(saved){
+      const parsed=normalizeData(JSON.parse(saved));
+
+      if(parsed.initialized!==false){
+        return parsed;
+      }
+    }
+  }catch(error){
+    console.warn("Local data could not be loaded.",error);
+  }
+
+  const base=clone(EMBEDDED_DATA);
+
+  if(base.seedDemo || base.initialized===false){
+    return buildDemoData();
+  }
+
+  return normalizeData(base);
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+function populateTeacherLogin(){
+
+  const select=document.getElementById("teacherLoginSelect");
+
+  const teachers=DATA.teachers.filter(t=>t.active!==false);
+
+  select.innerHTML=teachers.map(t=>
+    `<option value="${esc(t.id)}">${esc(t.name)} — ${esc(t.subject)}</option>`
+  ).join("");
+
+  if(!teachers.length){
+    select.innerHTML=`<option value="">No active teachers</option>`;
+  }
+}
+
+function changeLoginRole(){
+
+  const role=document.getElementById("loginRole").value;
+
+  document.getElementById("teacherLoginFields").classList.toggle(
+    "hidden",role!=="teacher"
+  );
+
+  document.getElementById("studentLoginFields").classList.toggle(
+    "hidden",role!=="student"
+  );
+
+  document.getElementById("adminLoginFields").classList.toggle(
+    "hidden",role!=="admin"
+  );
+}
+
+function login(){
+
+  const role=document.getElementById("loginRole").value;
+
+  if(role==="admin"){
+
+    const pass=document.getElementById("adminLoginPass").value;
+
+    if(pass===DATA.masterPass){
+
+      SESSION={
+        role:"admin",
+        userId:"admin",
+        name:"Administrator",
+        subject:null
+      };
+
+      startApp();
+      return;
+    }
+
+    toast("Invalid administrator password.");
+    return;
+  }
+
+  if(role==="teacher"){
+
+    const id=document.getElementById("teacherLoginSelect").value;
+    const pass=document.getElementById("teacherLoginPass").value;
+
+    const teacher=DATA.teachers.find(t=>t.id===id && t.active!==false);
+
+    if(teacher && pass===teacher.password){
+
+      SESSION={
+        role:"teacher",
+        userId:teacher.id,
+        name:teacher.name,
+        subject:teacher.subject
+      };
+
+      startApp();
+      return;
+    }
+
+    toast("Invalid teacher login.");
+    return;
+  }
+
+  if(role==="student"){
+
+    const roll=document.getElementById("studentLoginRoll").value.trim();
+    const pass=document.getElementById("studentLoginPass").value;
+
+    const student=DATA.students.find(
+      s=>s.roll===roll && s.active!==false
+    );
+
+    if(student && pass===student.password){
+
+      SESSION={
+        role:"student",
+        userId:student.id,
+        name:student.name,
+        subject:null
+      };
+
+      startApp();
+      return;
+    }
+
+    toast("Invalid student login.");
+  }
+}
+
+function startApp(){
+
+  sessionStorage.setItem("kkw_session",JSON.stringify(SESSION));
+
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("appShell").classList.remove("hidden");
+
+  document.getElementById("roleBadge").textContent=
+    SESSION.role.toUpperCase();
+
+  document.getElementById("sessionName").textContent=
+    SESSION.name;
+
+  applyRoleNavigation();
+
+  navigate("dashboard");
+}
+
+function restoreSession(){
+
+  try{
+
+    const saved=sessionStorage.getItem("kkw_session");
+
+    if(!saved) return;
+
+    SESSION=JSON.parse(saved);
+
+    if(!SESSION.role) return;
+
+    startApp();
+
+  }catch(e){
+    sessionStorage.removeItem("kkw_session");
+  }
+}
+
+function logout(){
+
+  sessionStorage.removeItem("kkw_session");
+
+  SESSION={
+    role:null,
+    userId:null,
+    name:null,
+    subject:null
+  };
+
+  document.getElementById("appShell").classList.add("hidden");
+  document.getElementById("loginScreen").classList.remove("hidden");
+
+  document.getElementById("teacherLoginPass").value="";
+  document.getElementById("studentLoginPass").value="";
+  document.getElementById("adminLoginPass").value="";
+}
+
+function applyRoleNavigation(){
+
+  document.querySelectorAll(".nav button").forEach(btn=>{
+    const classes=Array.from(btn.classList);
+
+    if(classes.includes("role-admin")){
+      btn.style.display=SESSION.role==="admin"?"flex":"none";
+    }
+
+    if(classes.includes("role-teacher")){
+      btn.style.display=
+        (SESSION.role==="teacher"||SESSION.role==="admin")
+        ?"flex":"none";
+    }
+  });
+
+  document.querySelectorAll(".nav-label.role-admin").forEach(el=>{
+    el.style.display=SESSION.role==="admin"?"block":"none";
+  });
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+function navigate(page){
+
+  const restricted={
+    attendance:["teacher","admin"],
+    students:["admin"],
+    teachers:["admin"],
+    data:["admin"]
+  };
+
+  if(restricted[page] &&
+     !restricted[page].includes(SESSION.role)){
+    toast("You do not have permission to access this section.");
+    return;
+  }
+
+  CURRENT_PAGE=page;
+
+  document.querySelectorAll(".page").forEach(el=>{
+    el.classList.remove("active");
+  });
+
+  const target=document.getElementById("page-"+page);
+
+  if(target) target.classList.add("active");
+
+  document.querySelectorAll(".nav button").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.page===page);
+  });
+
+  const titles={
+    dashboard:"Dashboard",
+    attendance:"Attendance",
+    reports:"Attendance Reports",
+    students:"Students",
+    teachers:"Teachers",
+    calendar:"Academic Calendar",
+    notices:"Notices",
+    notes:"Notes",
+    pyqs:"Previous Year Questions",
+    videos:"Videos",
+    resources:"Resources",
+    data:"Data Management"
+  };
+
+  document.getElementById("topPageTitle").textContent=
+    titles[page]||"Dashboard";
+
+  renderPage(page);
+
+  closeSidebar();
+}
+
+function renderPage(page){
+
+  switch(page){
+
+    case "dashboard":
+      renderDashboard();
+      break;
+
+    case "attendance":
+      renderAttendance();
+      break;
+
+    case "reports":
+      renderReports();
+      break;
+
+    case "students":
+      renderStudents();
+      break;
+
+    case "teachers":
+      renderTeachers();
+      break;
+
+    case "calendar":
+      renderCalendar();
+      break;
+
+    case "notices":
+      renderNotices();
+      break;
+
+    case "notes":
+      renderNotes();
+      break;
+
+    case "pyqs":
+      renderPYQs();
+      break;
+
+    case "videos":
+      renderVideos();
+      break;
+
+    case "resources":
+      renderResources();
+      break;
+
+    case "data":
+      renderDataManagement();
+      break;
+  }
+}
+
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+function closeSidebar(){
+  document.getElementById("sidebar").classList.remove("open");
+}
+
+
+/* =========================================================
+   ATTENDANCE HELPERS
+   ========================================================= */
+
+function visibleAttendance(){
+
+  let records=[...DATA.attendance];
+
+  if(SESSION.role==="teacher"){
+    records=records.filter(r=>r.teacherId===SESSION.userId);
+  }
+
+  if(SESSION.role==="student"){
+    records=records.filter(r=>r.studentId===SESSION.userId);
+  }
+
+  return records;
+}
+
+function attendanceGroups(records){
+
+  const map=new Map();
+
+  records.forEach(r=>{
+
+    const key=r.date+"|"+r.teacherId+"|"+r.subject;
+
+    if(!map.has(key)){
+      map.set(key,{
+        date:r.date,
+        teacherId:r.teacherId,
+        teacherName:r.teacherName,
+        subject:r.subject,
+        records:[]
+      });
+    }
+
+    map.get(key).records.push(r);
+  });
+
+  return Array.from(map.values()).sort(
+    (a,b)=>b.date.localeCompare(a.date)
+  );
+}
+
+function percentage(present,total){
+
+  if(!total) return 0;
+
+  return Math.round((present/total)*10000)/100;
+}
+
+function getStudentStats(studentId,subject="all"){
+
+  let records=DATA.attendance.filter(
+    r=>r.studentId===studentId
+  );
+
+  if(SESSION.role==="teacher"){
+    records=records.filter(r=>r.teacherId===SESSION.userId);
+  }
+
+  if(subject && subject!=="all"){
+    records=records.filter(r=>r.subject===subject);
+  }
+
+  const lectures=new Set(
+    records.map(r=>r.date+"|"+r.teacherId+"|"+r.subject)
+  ).size;
+
+  const present=records.filter(r=>r.status==="Present").length;
+  const absent=records.filter(r=>r.status==="Absent").length;
+
+  return{
+    lectures,
+    present,
+    absent,
+    percentage:percentage(present,lectures)
+  };
+}
+
+function getAllStudentAverage(){
+
+  const students=
+    SESSION.role==="student"
+    ?DATA.students.filter(s=>s.id===SESSION.userId)
+    :DATA.students.filter(s=>s.active!==false);
+
+  if(!students.length) return 0;
+
+  let total=0;
+
+  students.forEach(s=>{
+    total+=getStudentStats(s.id).percentage;
+  });
+
+  return Math.round((total/students.length)*100)/100;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+function renderDashboard(){
+
+  const page=document.getElementById("page-dashboard");
+
+  let statsHTML="";
+  let bodyHTML="";
+
+  if(SESSION.role==="admin"){
+
+    const totalStudents=DATA.students.filter(s=>s.active!==false).length;
+    const totalTeachers=DATA.teachers.filter(t=>t.active!==false).length;
+    const lectures=attendanceGroups(DATA.attendance).length;
+    const avg=getAllStudentAverage();
+
+    statsHTML=`
+      <div class="stats-grid">
+        ${statCard("Students",totalStudents,"Active students")}
+        ${statCard("Teachers",totalTeachers,"Active teachers")}
+        ${statCard("Lectures",lectures,"Attendance records")}
+        ${statCard("Average Attendance",avg+"%","All active students")}
+      </div>
+    `;
+
+  }else if(SESSION.role==="teacher"){
+
+    const own=visibleAttendance();
+    const lectures=attendanceGroups(own).length;
+
+    const studentStats=DATA.students
+      .filter(s=>s.active!==false)
+      .map(s=>getStudentStats(s.id));
+
+    let avg=0;
+
+    if(studentStats.length){
+      avg=studentStats.reduce((a,b)=>a+b.percentage,0)/studentStats.length;
+      avg=Math.round(avg*100)/100;
+    }
+
+    statsHTML=`
+      <div class="stats-grid">
+        ${statCard("Students",DATA.students.filter(s=>s.active!==false).length,"Active students")}
+        ${statCard("Subject",SESSION.subject,"Assigned subject")}
+        ${statCard("Lectures",lectures,"Your recorded lectures")}
+        ${statCard("Average Attendance",avg+"%","For your subject")}
+      </div>
+    `;
+
+  }else{
+
+    const s=getStudentStats(SESSION.userId);
+
+    statsHTML=`
+      <div class="stats-grid">
+        ${statCard("Total Lectures",s.lectures,"Recorded lectures")}
+        ${statCard("Present",s.present,"Attendance")}
+        ${statCard("Absent",s.absent,"Attendance")}
+        ${statCard("Attendance",s.percentage+"%","Overall percentage")}
+      </div>
+    `;
+  }
+
+  const holiday=holidayForDate(today());
+
+  const todayStatus=holiday
+    ?`<span class="status absent">HOLIDAY</span> ${esc(holiday.title)}`
+    :isWeekend(today())
+      ?`<span class="status pending">WEEKLY OFF</span>`
+      :`<span class="status present">WORKING DAY</span>`;
+
+  const notices=DATA.notices
+    .slice()
+    .sort((a,b)=>b.date.localeCompare(a.date))
+    .slice(0,5);
+
+  const holidays=DATA.holidays
+    .filter(h=>h.end>=today())
+    .sort((a,b)=>a.start.localeCompare(b.start))
+    .slice(0,5);
+
+  bodyHTML=`
+    <div class="info-banner">
+      <b>Today:</b> ${formatDate(today())} &nbsp; ${todayStatus}
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="card">
+        <div class="card-title">Recent Notices</div>
+
+        ${
+          notices.length
+          ?notices.map(n=>`
+            <div class="notice-item">
+              <div class="notice-title">${esc(n.title)}</div>
+              <div class="notice-meta">
+                ${formatDate(n.date)} • ${esc(n.priority||"Normal")}
+              </div>
+              <div class="note-body">${esc(n.body)}</div>
+            </div>
+          `).join("")
+          :`<div class="empty">No notices available.</div>`
+        }
+      </div>
+
+      <div class="card">
+        <div class="card-title">Upcoming Holidays</div>
+
+        ${
+          holidays.length
+          ?holidays.map(h=>`
+            <div class="notice-item">
+              <div class="notice-title">${esc(h.title)}</div>
+              <div class="notice-meta">
+                ${formatDate(h.start)}
+                ${h.end!==h.start?" — "+formatDate(h.end):""}
+              </div>
+            </div>
+          `).join("")
+          :`<div class="empty">No upcoming holidays.</div>`
+        }
+      </div>
+
+    </div>
+  `;
+
+  page.innerHTML=statsHTML+bodyHTML;
+}
+
+function statCard(label,value,note){
+
+  return`
+    <div class="stat-card">
+      <div class="stat-label">${esc(label)}</div>
+      <div class="stat-value">${esc(value)}</div>
+      <div class="stat-note">${esc(note)}</div>
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ATTENDANCE PAGE
+   ========================================================= */
+
+function renderAttendance(){
+
+  if(SESSION.role==="student") return;
+
+  const page=document.getElementById("page-attendance");
+
+  const teachers=DATA.teachers.filter(t=>t.active!==false);
+
+  let selectedTeacher=
+    SESSION.role==="teacher"
+    ?SESSION.userId
+    :(teachers[0]?.id||"");
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Daily Attendance</div>
+        <div class="section-desc">
+          Record student attendance lecture-wise.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <div class="filter-grid">
+
+        <div class="filter-item">
+          <label>Attendance Date</label>
+          <input type="date" id="attendanceDate" value="${today()}"
+                 onchange="loadAttendanceSheet()">
+        </div>
+
+        <div class="filter-item">
+          <label>Teacher</label>
+          ${
+            SESSION.role==="teacher"
+            ?`
+              <input value="${esc(SESSION.name)}" disabled>
+            `
+            :`
+              <select id="attendanceTeacher"
+                      onchange="loadAttendanceSheet()">
+                ${teachers.map(t=>`
+                  <option value="${esc(t.id)}"
+                    ${t.id===selectedTeacher?"selected":""}>
+                    ${esc(t.name)} — ${esc(t.subject)}
+                  </option>
+                `).join("")}
+              </select>
+            `
+          }
+        </div>
+
+        <div class="filter-item">
+          <label>Subject</label>
+          <input id="attendanceSubject" value="${
+            esc(
+              SESSION.role==="teacher"
+              ?SESSION.subject
+              :(teachers.find(t=>t.id===selectedTeacher)?.subject||"")
+            )
+          }" disabled>
+        </div>
+
+        <div class="filter-item">
+          <label>Quick Actions</label>
+          <div class="attendance-toolbar">
+            <button class="btn btn-success btn-sm"
+                    onclick="markAllAttendance('Present')">
+              ✓ All Present
+            </button>
+
+            <button class="btn btn-danger btn-sm"
+                    onclick="markAllAttendance('Absent')">
+              × All Absent
+            </button>
+
+            <button class="btn btn-light btn-sm"
+                    onclick="clearAttendanceSheet()">
+              Clear
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="attendanceSheet"></div>
+
+    </div>
+  `;
+
+  loadAttendanceSheet();
+}
+
+function getSelectedAttendanceTeacher(){
+
+  if(SESSION.role==="teacher"){
+    return DATA.teachers.find(t=>t.id===SESSION.userId);
+  }
+
+  const id=document.getElementById("attendanceTeacher")?.value;
+
+  return DATA.teachers.find(t=>t.id===id);
+}
+
+function loadAttendanceSheet(){
+
+  const container=document.getElementById("attendanceSheet");
+
+  if(!container) return;
+
+  const date=document.getElementById("attendanceDate").value;
+  const teacher=getSelectedAttendanceTeacher();
+
+  if(!teacher){
+    container.innerHTML=`<div class="empty">No teacher selected.</div>`;
+    return;
+  }
+
+  const holiday=holidayForDate(date);
+
+  if(holiday){
+
+    container.innerHTML=`
+      <div class="warning-banner">
+        <b>${esc(holiday.title)}</b><br>
+        Attendance cannot be recorded because this date is marked as
+        a ${esc(holiday.type||"holiday")}.
+      </div>
+    `;
+
+    return;
+  }
+
+  const existing=DATA.attendance.filter(
+    r=>r.date===date && r.teacherId===teacher.id
+  );
+
+  const existingMap={};
+
+  existing.forEach(r=>{
+    existingMap[r.studentId]=r.status;
+  });
+
+  const students=DATA.students.filter(s=>s.active!==false);
+
+  container.innerHTML=`
+    <div class="attendance-summary">
+      <span class="summary-pill">
+        Students: <b id="attTotal">${students.length}</b>
+      </span>
+      <span class="summary-pill">
+        Present: <b id="attPresent">0</b>
+      </span>
+      <span class="summary-pill">
+        Absent: <b id="attAbsent">0</b>
+      </span>
+      <span class="summary-pill">
+        Not Marked: <b id="attPending">${students.length}</b>
+      </span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Roll No.</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          ${
+            students.length
+            ?students.map((s,index)=>{
+
+              const status=existingMap[s.id]||"";
+
+              return`
+                <tr>
+                  <td>${index+1}</td>
+                  <td><b>${esc(s.roll)}</b></td>
+                  <td>${esc(s.name)}</td>
+                  <td>${esc(s.className)}</td>
+                  <td>
+                    <select class="status-select attendance-status"
+                            data-student-id="${esc(s.id)}"
+                            onchange="updateAttendanceCounter()">
+                      <option value="" ${status===""?"selected":""}>
+                        Not Marked
+                      </option>
+                      <option value="Present"
+                        ${status==="Present"?"selected":""}>
+                        Present
+                      </option>
+                      <option value="Absent"
+                        ${status==="Absent"?"selected":""}>
+                        Absent
+                      </option>
+                    </select>
+                  </td>
+                </tr>
+              `;
+            }).join("")
+            :`
+              <tr>
+                <td colspan="5">
+                  <div class="empty">No active students found.</div>
+                </td>
+              </tr>
+            `
+          }
+
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:15px;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;">
+      <button class="btn btn-primary"
+              onclick="saveAttendance()">
+        Save Attendance
+      </button>
+
+      <button class="btn btn-outline"
+              onclick="navigate('reports')">
+        Open Reports
+      </button>
+    </div>
+  `;
+
+  updateAttendanceCounter();
+}
+
+function updateAttendanceCounter(){
+
+  const selects=document.querySelectorAll(".attendance-status");
+
+  let present=0;
+  let absent=0;
+  let pending=0;
+
+  selects.forEach(s=>{
+    if(s.value==="Present") present++;
+    else if(s.value==="Absent") absent++;
+    else pending++;
+  });
+
+  const p=document.getElementById("attPresent");
+  const a=document.getElementById("attAbsent");
+  const n=document.getElementById("attPending");
+
+  if(p) p.textContent=present;
+  if(a) a.textContent=absent;
+  if(n) n.textContent=pending;
+}
+
+function markAllAttendance(status){
+
+  document.querySelectorAll(".attendance-status").forEach(select=>{
+    select.value=status;
+  });
+
+  updateAttendanceCounter();
+}
+
+function saveAttendance(){
+
+  const date=document.getElementById("attendanceDate")?.value;
+  const teacher=getSelectedAttendanceTeacher();
+
+  if(!date||!teacher){
+    toast("Select date and teacher.");
+    return;
+  }
+
+  if(holidayForDate(date)){
+    toast("Attendance cannot be saved on a holiday.");
+    return;
+  }
+
+  const selects=document.querySelectorAll(".attendance-status");
+
+  if(!selects.length){
+    toast("No students available.");
+    return;
+  }
+
+  const records=[];
+
+  let pending=false;
+
+  selects.forEach(select=>{
+
+    const student=DATA.students.find(
+      s=>s.id===select.dataset.studentId
+    );
+
+    if(!student) return;
+
+    if(!select.value){
+      pending=true;
+      return;
+    }
+
+    records.push({
+      id:uid("att"),
+      date,
+      teacherId:teacher.id,
+      teacherName:teacher.name,
+      subject:teacher.subject,
+      studentId:student.id,
+      roll:student.roll,
+      studentName:student.name,
+      status:select.value,
+      savedAt:new Date().toISOString()
+    });
+  });
+
+  if(pending){
+
+    toast("Please mark every student before saving.");
+    return;
+  }
+
+  DATA.attendance=DATA.attendance.filter(
+    r=>!(r.date===date && r.teacherId===teacher.id)
+  );
+
+  DATA.attendance.push(...records);
+
+  saveData();
+
+  toast("Attendance saved successfully.");
+
+  loadAttendanceSheet();
+}
+
+function clearAttendanceSheet(){
+
+  const date=document.getElementById("attendanceDate")?.value;
+  const teacher=getSelectedAttendanceTeacher();
+
+  if(!date||!teacher) return;
+
+  const existing=DATA.attendance.some(
+    r=>r.date===date && r.teacherId===teacher.id
+  );
+
+  if(!existing){
+    loadAttendanceSheet();
+    return;
+  }
+
+  if(!confirm(
+    `Clear attendance for ${formatDate(date)}?\n\n${teacher.subject}`
+  )) return;
+
+  DATA.attendance=DATA.attendance.filter(
+    r=>!(r.date===date && r.teacherId===teacher.id)
+  );
+
+  saveData();
+
+  toast("Attendance cleared.");
+
+  loadAttendanceSheet();
+}
+
+
+/* =========================================================
+   REPORTS
+   ========================================================= */
+
+function renderReports(){
+
+  const page=document.getElementById("page-reports");
+
+  let students=DATA.students.filter(s=>s.active!==false);
+
+  if(SESSION.role==="student"){
+    students=students.filter(s=>s.id===SESSION.userId);
+  }
+
+  let subjects=[...new Set(
+    DATA.attendance
+      .filter(r=>
+        SESSION.role!=="teacher" ||
+        r.teacherId===SESSION.userId
+      )
+      .map(r=>r.subject)
+  )];
+
+  if(SESSION.role==="teacher"){
+    subjects=[SESSION.subject];
+  }
+
+  const defaultStudent=students[0]?.id||"";
+  const defaultSubject="all";
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Attendance Reports</div>
+        <div class="section-desc">
+          Overall average, student-wise percentage and exact date-wise attendance.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <div class="filter-grid">
+
+        <div class="filter-item">
+          <label>Select Student</label>
+          <select id="reportStudent"
+                  onchange="refreshStudentReport()"
+                  ${SESSION.role==="student"?"disabled":""}>
+            ${
+              students.map(s=>`
+                <option value="${esc(s.id)}"
+                  ${s.id===defaultStudent?"selected":""}>
+                  ${esc(s.roll)} — ${esc(s.name)}
+                </option>
+              `).join("")
+            }
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label>Subject</label>
+          <select id="reportSubject"
+                  onchange="refreshStudentReport()">
+            <option value="all">All Subjects</option>
+            ${
+              subjects.map(s=>`
+                <option value="${esc(s)}">${esc(s)}</option>
+              `).join("")
+            }
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label>From Date</label>
+          <input type="date" id="reportFrom"
+                 onchange="refreshStudentReport()">
+        </div>
+
+        <div class="filter-item">
+          <label>To Date</label>
+          <input type="date" id="reportTo"
+                 onchange="refreshStudentReport()">
+        </div>
+
+      </div>
+
+      <div id="studentReportArea"></div>
+
+    </div>
+
+    <div class="card">
+      <div class="section-head">
+        <div>
+          <div class="card-title" style="margin-bottom:2px;">
+            Overall Average Attendance
+          </div>
+          <div class="section-desc">
+            Average percentage of all active students.
+          </div>
+        </div>
+      </div>
+
+      <div id="overallAverageArea"></div>
+    </div>
+
+    <div class="card">
+      <div class="section-head">
+        <div>
+          <div class="card-title" style="margin-bottom:2px;">
+            Lecture Summary
+          </div>
+          <div class="section-desc">
+            See total, present, absent and exactly who attended each lecture.
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Teacher</th>
+              <th>Total</th>
+              <th>Present</th>
+              <th>Absent</th>
+              <th>Attendance %</th>
+              <th>Details</th>
+              ${
+                SESSION.role!=="student"
+                ?"<th>Action</th>"
+                :""
+              }
+            </tr>
+          </thead>
+          <tbody id="lectureReportBody"></tbody>
+        </table>
+      </div>
+    </div>
+  `;
+
+  refreshStudentReport();
+  renderOverallAverage();
+  renderLectureReport();
+}
+
+function getReportStudentId(){
+
+  return document.getElementById("reportStudent")?.value||
+    SESSION.userId;
+}
+
+function getReportSubject(){
+
+  return document.getElementById("reportSubject")?.value||"all";
+}
+
+function refreshStudentReport(){
+
+  const area=document.getElementById("studentReportArea");
+
+  if(!area) return;
+
+  const studentId=getReportStudentId();
+  const subject=getReportSubject();
+
+  let records=DATA.attendance.filter(
+    r=>r.studentId===studentId
+  );
+
+  if(SESSION.role==="teacher"){
+    records=records.filter(r=>r.teacherId===SESSION.userId);
+  }
+
+  if(subject!=="all"){
+    records=records.filter(r=>r.subject===subject);
+  }
+
+  const from=document.getElementById("reportFrom")?.value;
+  const to=document.getElementById("reportTo")?.value;
+
+  if(from){
+    records=records.filter(r=>r.date>=from);
+  }
+
+  if(to){
+    records=records.filter(r=>r.date<=to);
+  }
+
+  const lectures=new Set(
+    records.map(r=>r.date+"|"+r.teacherId+"|"+r.subject)
+  ).size;
+
+  const present=records.filter(r=>r.status==="Present").length;
+  const absent=records.filter(r=>r.status==="Absent").length;
+  const avg=percentage(present,lectures);
+
+  const student=DATA.students.find(s=>s.id===studentId);
+
+  const subjectsMap={};
+
+  records.forEach(r=>{
+
+    if(!subjectsMap[r.subject]){
+      subjectsMap[r.subject]={
+        lectures:new Set(),
+        present:0,
+        absent:0
+      };
+    }
+
+    subjectsMap[r.subject].lectures.add(
+      r.date+"|"+r.teacherId
+    );
+
+    if(r.status==="Present") subjectsMap[r.subject].present++;
+    if(r.status==="Absent") subjectsMap[r.subject].absent++;
+  });
+
+  const sorted=[...records].sort(
+    (a,b)=>b.date.localeCompare(a.date)
+  );
+
+  area.innerHTML=`
+    <div class="info-banner">
+      <b>Student:</b> ${esc(student?.name||"-")}
+      &nbsp; | &nbsp;
+      <b>Roll:</b> ${esc(student?.roll||"-")}
+    </div>
+
+    <div class="report-highlight">
+      <div class="highlight-box">
+        <div class="small">Total Lectures</div>
+        <div class="big">${lectures}</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Present</div>
+        <div class="big">${present}</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Absent</div>
+        <div class="big">${absent}</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Attendance %</div>
+        <div class="big">${avg}%</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Status</div>
+        <div class="big" style="font-size:15px;">
+          ${avg>=75?"Good":"Needs Attention"}
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="box-shadow:none;padding:0;border:0;">
+      <div class="card-title">Subject-wise Attendance</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Lectures</th>
+              <th>Present</th>
+              <th>Absent</th>
+              <th>Percentage</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              Object.keys(subjectsMap).length
+              ?Object.entries(subjectsMap).map(([name,x])=>{
+                const total=x.lectures.size;
+                const p=percentage(x.present,total);
+
+                return`
+                  <tr>
+                    <td><b>${esc(name)}</b></td>
+                    <td>${total}</td>
+                    <td>
+                      <span class="status present">${x.present}</span>
+                    </td>
+                    <td>
+                      <span class="status absent">${x.absent}</span>
+                    </td>
+                    <td><b>${p}%</b></td>
+                  </tr>
+                `;
+              }).join("")
+              :`
+                <tr>
+                  <td colspan="5">
+                    <div class="empty">No attendance found for this selection.</div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="card-title">
+        Exact Date-wise Attendance
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Teacher</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              sorted.length
+              ?sorted.map(r=>`
+                <tr>
+                  <td>${formatDate(r.date)}</td>
+                  <td>${esc(r.subject)}</td>
+                  <td>${esc(r.teacherName)}</td>
+                  <td>
+                    <span class="status ${
+                      r.status==="Present"?"present":"absent"
+                    }">
+                      ${r.status==="Present"?"✓ Present":"× Absent"}
+                    </span>
+                  </td>
+                </tr>
+              `).join("")
+              :`
+                <tr>
+                  <td colspan="4">
+                    <div class="empty">
+                      No date-wise attendance found.
+                    </div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function renderOverallAverage(){
+
+  const area=document.getElementById("overallAverageArea");
+
+  if(!area) return;
+
+  const students=DATA.students.filter(s=>s.active!==false);
+
+  let visibleStudents=students;
+
+  if(SESSION.role==="student"){
+    visibleStudents=students.filter(s=>s.id===SESSION.userId);
+  }
+
+  if(SESSION.role==="teacher"){
+    visibleStudents=students;
+  }
+
+  const rows=visibleStudents.map(s=>{
+
+    const st=getStudentStats(s.id);
+
+    return{
+      student:s,
+      ...st
+    };
+  });
+
+  const avg=rows.length
+    ?Math.round(
+      rows.reduce((sum,x)=>sum+x.percentage,0)/rows.length*100
+    )/100
+    :0;
+
+  area.innerHTML=`
+    <div class="report-highlight">
+
+      <div class="highlight-box">
+        <div class="small">Students Included</div>
+        <div class="big">${rows.length}</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Average of All Students</div>
+        <div class="big">${avg}%</div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Highest</div>
+        <div class="big">
+          ${rows.length
+            ?Math.max(...rows.map(x=>x.percentage))+"%"
+            :"0%"}
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="small">Lowest</div>
+        <div class="big">
+          ${rows.length
+            ?Math.min(...rows.map(x=>x.percentage))+"%"
+            :"0%"}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Roll</th>
+            <th>Student</th>
+            <th>Lectures</th>
+            <th>Present</th>
+            <th>Absent</th>
+            <th>Average %</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          ${
+            rows.length
+            ?rows.map(x=>`
+              <tr>
+                <td><b>${esc(x.student.roll)}</b></td>
+                <td>${esc(x.student.name)}</td>
+                <td>${x.lectures}</td>
+                <td>
+                  <span class="status present">${x.present}</span>
+                </td>
+                <td>
+                  <span class="status absent">${x.absent}</span>
+                </td>
+                <td><b>${x.percentage}%</b></td>
+              </tr>
+            `).join("")
+            :`
+              <tr>
+                <td colspan="6">
+                  <div class="empty">No students found.</div>
+                </td>
+              </tr>
+            `
+          }
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderLectureReport(){
+
+  const body=document.getElementById("lectureReportBody");
+
+  if(!body) return;
+
+  let records=[...DATA.attendance];
+
+  if(SESSION.role==="teacher"){
+    records=records.filter(r=>r.teacherId===SESSION.userId);
+  }
+
+  if(SESSION.role==="student"){
+    records=records.filter(r=>r.studentId===SESSION.userId);
+  }
+
+  const groups=attendanceGroups(records);
+
+  body.innerHTML=groups.length
+    ?groups.map(group=>{
+
+      let total=DATA.students.filter(s=>s.active!==false).length;
+
+      let groupRecords=group.records;
+
+      if(SESSION.role==="student"){
+        total=1;
+      }
+
+      const present=groupRecords.filter(
+        r=>r.status==="Present"
+      ).length;
+
+      const absent=groupRecords.filter(
+        r=>r.status==="Absent"
+      ).length;
+
+      const pct=percentage(present,total);
+
+      return`
+        <tr>
+          <td>${formatDate(group.date)}</td>
+          <td><b>${esc(group.subject)}</b></td>
+          <td>${esc(group.teacherName)}</td>
+          <td>${total}</td>
+          <td>
+            <span class="status present">${present}</span>
+          </td>
+          <td>
+            <span class="status absent">${absent}</span>
+          </td>
+          <td><b>${pct}%</b></td>
+          <td>
+            <button class="btn btn-primary btn-sm"
+                    onclick="viewLectureDetails(
+                      '${esc(group.date)}',
+                      '${esc(group.teacherId)}'
+                    )">
+              View Details
+            </button>
+          </td>
+
+          ${
+            SESSION.role!=="student"
+            ?`
+              <td>
+                <button class="btn btn-danger btn-sm"
+                        onclick="deleteLecture(
+                          '${esc(group.date)}',
+                          '${esc(group.teacherId)}'
+                        )">
+                  Delete
+                </button>
+              </td>
+            `
+            :""
+          }
+        </tr>
+      `;
+
+    }).join("")
+    :`
+      <tr>
+        <td colspan="${SESSION.role==="student"?8:9}">
+          <div class="empty">No lecture attendance found.</div>
+        </td>
+      </tr>
+    `;
+}
+
+
+/* =========================================================
+   LECTURE DETAILS
+   ========================================================= */
+
+function viewLectureDetails(date,teacherId){
+
+  let records=DATA.attendance.filter(
+    r=>r.date===date && r.teacherId===teacherId
+  );
+
+  if(SESSION.role==="teacher"){
+    records=records.filter(r=>r.teacherId===SESSION.userId);
+  }
+
+  if(SESSION.role==="student"){
+    records=records.filter(r=>r.studentId===SESSION.userId);
+  }
+
+  if(!records.length){
+    toast("Lecture details not found.");
+    return;
+  }
+
+  const first=records[0];
+
+  const present=records.filter(
+    r=>r.status==="Present"
+  );
+
+  const absent=records.filter(
+    r=>r.status==="Absent"
+  );
+
+  if(SESSION.role==="student"){
+
+    const own=records[0];
+
+    openModal(
+      "My Lecture Attendance",
+      `
+        <div class="info-banner">
+          <b>Date:</b> ${formatDate(date)}<br>
+          <b>Subject:</b> ${esc(first.subject)}<br>
+          <b>Teacher:</b> ${esc(first.teacherName)}
+        </div>
+
+        <div class="report-highlight">
+
+          <div class="highlight-box">
+            <div class="small">Student</div>
+            <div class="big" style="font-size:15px;">
+              ${esc(own.studentName)}
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="small">Roll No.</div>
+            <div class="big">${esc(own.roll)}</div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="small">Status</div>
+            <div class="big" style="font-size:15px;">
+              ${own.status}
+            </div>
+          </div>
+
+        </div>
+      `,
+      `<button class="btn btn-light" onclick="closeModal()">Close</button>`
+    );
+
+    return;
+  }
+
+  openModal(
+    "Lecture Attendance Details",
+    `
+      <div class="info-banner">
+        <b>Date:</b> ${formatDate(date)}<br>
+        <b>Subject:</b> ${esc(first.subject)}<br>
+        <b>Teacher:</b> ${esc(first.teacherName)}
+      </div>
+
+      <div class="report-highlight">
+
+        <div class="highlight-box">
+          <div class="small">Total Students</div>
+          <div class="big">${records.length}</div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="small">Present</div>
+          <div class="big">${present.length}</div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="small">Absent</div>
+          <div class="big">${absent.length}</div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="small">Attendance</div>
+          <div class="big">
+            ${percentage(present.length,records.length)}%
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" style="box-shadow:none;padding:0;border:0;">
+        <div class="card-title">
+          ✓ Present Students (${present.length})
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Roll</th>
+                <th>Student Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${
+                present.length
+                ?present
+                  .sort((a,b)=>a.roll.localeCompare(b.roll))
+                  .map(r=>`
+                    <tr>
+                      <td><b>${esc(r.roll)}</b></td>
+                      <td>${esc(r.studentName)}</td>
+                    </tr>
+                  `).join("")
+                :`
+                  <tr>
+                    <td colspan="2">
+                      <div class="empty">
+                        No student marked Present.
+                      </div>
+                    </td>
+                  </tr>
+                `
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="height:20px;"></div>
+
+      <div class="card" style="box-shadow:none;padding:0;border:0;">
+        <div class="card-title">
+          × Absent Students (${absent.length})
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Roll</th>
+                <th>Student Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${
+                absent.length
+                ?absent
+                  .sort((a,b)=>a.roll.localeCompare(b.roll))
+                  .map(r=>`
+                    <tr>
+                      <td><b>${esc(r.roll)}</b></td>
+                      <td>${esc(r.studentName)}</td>
+                    </tr>
+                  `).join("")
+                :`
+                  <tr>
+                    <td colspan="2">
+                      <div class="empty">
+                        No student marked Absent.
+                      </div>
+                    </td>
+                  </tr>
+                `
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `,
+    `<button class="btn btn-light" onclick="closeModal()">Close</button>`
+  );
+}
+
+function deleteLecture(date,teacherId){
+
+  if(SESSION.role==="teacher" && teacherId!==SESSION.userId){
+    toast("You can only delete your own lecture.");
+    return;
+  }
+
+  const teacher=DATA.teachers.find(t=>t.id===teacherId);
+
+  if(!confirm(
+    `Delete attendance for ${formatDate(date)}?\n\n`+
+    `${teacher?.subject||"Lecture"}`
+  )){
+    return;
+  }
+
+  DATA.attendance=DATA.attendance.filter(
+    r=>!(r.date===date && r.teacherId===teacherId)
+  );
+
+  saveData();
+
+  toast("Lecture attendance deleted.");
+
+  renderReports();
+}
+
+
+/* =========================================================
+   STUDENTS
+   ========================================================= */
+
+function renderStudents(){
+
+  const page=document.getElementById("page-students");
+
+  if(SESSION.role!=="admin") return;
+
+  const students=DATA.students;
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Student Management</div>
+        <div class="section-desc">
+          Add, edit, disable and manage student accounts.
+        </div>
+      </div>
+
+      <button class="btn btn-primary"
+              onclick="studentForm()">
+        + Add Student
+      </button>
+    </div>
+
+    <div class="card">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Password</th>
+              <th>Status</th>
+              <th>Attendance</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              students.length
+              ?students.map(s=>{
+                const st=getStudentStats(s.id);
+
+                return`
+                  <tr>
+                    <td><b>${esc(s.roll)}</b></td>
+                    <td>${esc(s.name)}</td>
+                    <td>${esc(s.className)}</td>
+                    <td>${esc(s.password)}</td>
+                    <td>
+                      <span class="status ${
+                        s.active!==false?"present":"absent"
+                      }">
+                        ${s.active!==false?"Active":"Disabled"}
+                      </span>
+                    </td>
+                    <td><b>${st.percentage}%</b></td>
+                    <td>
+                      <div style="display:flex;gap:5px;">
+                        <button class="btn btn-light btn-sm"
+                                onclick="studentForm('${esc(s.id)}')">
+                          Edit
+                        </button>
+
+                        <button class="btn btn-warning btn-sm"
+                                onclick="toggleStudent('${esc(s.id)}')">
+                          ${s.active!==false?"Disable":"Enable"}
+                        </button>
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="deleteStudent('${esc(s.id)}')">
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                `;
+              }).join("")
+              :`
+                <tr>
+                  <td colspan="7">
+                    <div class="empty">No students available.</div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  `;
+}
+
+function studentForm(id=""){
+
+  const student=id
+    ?DATA.students.find(s=>s.id===id)
+    :null;
+
+  openModal(
+    student?"Edit Student":"Add Student",
+    `
+      <div class="form-group">
+        <label>Roll No.</label>
+        <input id="studentFormRoll"
+               value="${esc(student?.roll||"")}"
+               placeholder="01">
+      </div>
+
+      <div class="form-group">
+        <label>Student Name</label>
+        <input id="studentFormName"
+               value="${esc(student?.name||"")}"
+               placeholder="Student name">
+      </div>
+
+      <div class="form-group">
+        <label>Class</label>
+        <input id="studentFormClass"
+               value="${esc(student?.className||"B.Ed Second Year")}">
+      </div>
+
+      <div class="form-group">
+        <label>Login Password</label>
+        <input id="studentFormPass"
+               value="${esc(student?.password||"")}"
+               placeholder="Student password">
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary"
+              onclick="saveStudent('${esc(id)}')">
+        Save Student
+      </button>
+    `
+  );
+}
+
+function saveStudent(id){
+
+  const roll=document.getElementById("studentFormRoll").value.trim();
+  const name=document.getElementById("studentFormName").value.trim();
+  const className=document.getElementById("studentFormClass").value.trim();
+  const password=document.getElementById("studentFormPass").value;
+
+  if(!roll||!name||!className||!password){
+    toast("Please fill all student fields.");
+    return;
+  }
+
+  const duplicate=DATA.students.find(
+    s=>s.roll===roll && s.id!==id
+  );
+
+  if(duplicate){
+    toast("Roll number already exists.");
+    return;
+  }
+
+  if(id){
+
+    const student=DATA.students.find(s=>s.id===id);
+
+    if(!student) return;
+
+    student.roll=roll;
+    student.name=name;
+    student.className=className;
+    student.password=password;
+
+  }else{
+
+    DATA.students.push({
+      id:uid("student"),
+      roll,
+      name,
+      className,
+      password,
+      active:true
+    });
+  }
+
+  saveData();
+  closeModal();
+  toast("Student saved successfully.");
+  renderStudents();
+}
+
+function toggleStudent(id){
+
+  const student=DATA.students.find(s=>s.id===id);
+
+  if(!student) return;
+
+  student.active=student.active===false;
+
+  saveData();
+
+  toast(
+    student.active
+    ?"Student enabled."
+    :"Student disabled."
+  );
+
+  renderStudents();
+}
+
+function deleteStudent(id){
+
+  const student=DATA.students.find(s=>s.id===id);
+
+  if(!student) return;
+
+  if(!confirm(
+    `Delete ${student.name}?\n\nExisting attendance records will also be removed.`
+  )) return;
+
+  DATA.students=DATA.students.filter(s=>s.id!==id);
+
+  DATA.attendance=DATA.attendance.filter(
+    r=>r.studentId!==id
+  );
+
+  saveData();
+
+  toast("Student deleted.");
+
+  renderStudents();
+}
+
+
+/* =========================================================
+   TEACHERS
+   ========================================================= */
+
+function renderTeachers(){
+
+  if(SESSION.role!=="admin") return;
+
+  const page=document.getElementById("page-teachers");
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Teacher Management</div>
+        <div class="section-desc">
+          Manage teacher accounts and assigned subjects.
+        </div>
+      </div>
+
+      <button class="btn btn-primary"
+              onclick="teacherForm()">
+        + Add Teacher
+      </button>
+    </div>
+
+    <div class="card">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Teacher</th>
+              <th>Subject</th>
+              <th>Password</th>
+              <th>Status</th>
+              <th>Lectures</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              DATA.teachers.length
+              ?DATA.teachers.map(t=>{
+                const count=DATA.attendance.filter(
+                  r=>r.teacherId===t.id
+                ).length;
+
+                const lectures=new Set(
+                  DATA.attendance
+                    .filter(r=>r.teacherId===t.id)
+                    .map(r=>r.date)
+                ).size;
+
+                return`
+                  <tr>
+                    <td><b>${esc(t.name)}</b></td>
+                    <td>${esc(t.subject)}</td>
+                    <td>${esc(t.password)}</td>
+                    <td>
+                      <span class="status ${
+                        t.active!==false?"present":"absent"
+                      }">
+                        ${t.active!==false?"Active":"Disabled"}
+                      </span>
+                    </td>
+                    <td>${lectures}</td>
+                    <td>
+                      <div style="display:flex;gap:5px;">
+                        <button class="btn btn-light btn-sm"
+                                onclick="teacherForm('${esc(t.id)}')">
+                          Edit
+                        </button>
+
+                        <button class="btn btn-warning btn-sm"
+                                onclick="toggleTeacher('${esc(t.id)}')">
+                          ${t.active!==false?"Disable":"Enable"}
+                        </button>
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="deleteTeacher('${esc(t.id)}')">
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                `;
+              }).join("")
+              :`
+                <tr>
+                  <td colspan="6">
+                    <div class="empty">No teachers available.</div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  `;
+}
+
+function teacherForm(id=""){
+
+  const teacher=id
+    ?DATA.teachers.find(t=>t.id===id)
+    :null;
+
+  openModal(
+    teacher?"Edit Teacher":"Add Teacher",
+    `
+      <div class="form-group">
+        <label>Teacher Name</label>
+        <input id="teacherFormName"
+               value="${esc(teacher?.name||"")}"
+               placeholder="Teacher name">
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input id="teacherFormSubject"
+               value="${esc(teacher?.subject||"")}"
+               placeholder="Subject">
+      </div>
+
+      <div class="form-group">
+        <label>Login Password</label>
+        <input id="teacherFormPass"
+               value="${esc(teacher?.password||"")}"
+               placeholder="Teacher password">
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary"
+              onclick="saveTeacher('${esc(id)}')">
+        Save Teacher
+      </button>
+    `
+  );
+}
+
+function saveTeacher(id){
+
+  const name=document.getElementById("teacherFormName").value.trim();
+  const subject=document.getElementById("teacherFormSubject").value.trim();
+  const password=document.getElementById("teacherFormPass").value;
+
+  if(!name||!subject||!password){
+    toast("Please fill all teacher fields.");
+    return;
+  }
+
+  if(id){
+
+    const teacher=DATA.teachers.find(t=>t.id===id);
+
+    if(!teacher) return;
+
+    teacher.name=name;
+    teacher.subject=subject;
+    teacher.password=password;
+
+    DATA.attendance.forEach(r=>{
+      if(r.teacherId===id){
+        r.teacherName=name;
+      }
+    });
+
+  }else{
+
+    DATA.teachers.push({
+      id:uid("teacher"),
+      name,
+      subject,
+      password,
+      active:true
+    });
+  }
+
+  saveData();
+
+  populateTeacherLogin();
+
+  closeModal();
+
+  toast("Teacher saved successfully.");
+
+  renderTeachers();
+}
+
+function toggleTeacher(id){
+
+  const teacher=DATA.teachers.find(t=>t.id===id);
+
+  if(!teacher) return;
+
+  teacher.active=teacher.active===false;
+
+  saveData();
+
+  populateTeacherLogin();
+
+  toast(
+    teacher.active
+    ?"Teacher enabled."
+    :"Teacher disabled."
+  );
+
+  renderTeachers();
+}
+
+function deleteTeacher(id){
+
+  const teacher=DATA.teachers.find(t=>t.id===id);
+
+  if(!teacher) return;
+
+  if(!confirm(
+    `Delete ${teacher.name}?\n\nExisting attendance records will also be removed.`
+  )) return;
+
+  DATA.teachers=DATA.teachers.filter(t=>t.id!==id);
+
+  DATA.attendance=DATA.attendance.filter(
+    r=>r.teacherId!==id
+  );
+
+  saveData();
+
+  populateTeacherLogin();
+
+  toast("Teacher deleted.");
+
+  renderTeachers();
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+function renderCalendar(){
+
+  const page=document.getElementById("page-calendar");
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Academic Calendar</div>
+        <div class="section-desc">
+          Demo/sample calendar. Holidays can be managed by administrator.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="holidayForm()">
+            + Add Holiday
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="warning-banner">
+      <b>Demo Calendar:</b> The dates shown here are sample data for portal testing.
+      They should be replaced with the college's official academic calendar.
+    </div>
+
+    <div class="card">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Type</th>
+              ${
+                SESSION.role==="admin"
+                ?"<th>Action</th>"
+                :""
+              }
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              DATA.holidays.length
+              ?DATA.holidays
+                .slice()
+                .sort((a,b)=>a.start.localeCompare(b.start))
+                .map(h=>`
+                  <tr>
+                    <td><b>${esc(h.title)}</b></td>
+                    <td>${formatDate(h.start)}</td>
+                    <td>${formatDate(h.end)}</td>
+                    <td>
+                      <span class="status absent">${esc(h.type||"Holiday")}</span>
+                    </td>
+                    ${
+                      SESSION.role==="admin"
+                      ?`
+                        <td>
+                          <button class="btn btn-danger btn-sm"
+                                  onclick="deleteHoliday('${esc(h.id)}')">
+                            Delete
+                          </button>
+                        </td>
+                      `
+                      :""
+                    }
+                  </tr>
+                `).join("")
+              :`
+                <tr>
+                  <td colspan="5">
+                    <div class="empty">No calendar entries.</div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  `;
+}
+
+function holidayForm(){
+
+  openModal(
+    "Add Calendar Entry",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="holidayTitle" placeholder="Holiday / Vacation">
+      </div>
+
+      <div class="form-group">
+        <label>Start Date</label>
+        <input id="holidayStart" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>End Date</label>
+        <input id="holidayEnd" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Type</label>
+        <select id="holidayType">
+          <option>Holiday</option>
+          <option>Vacation</option>
+          <option>Event</option>
+        </select>
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveHoliday()">
+        Save
+      </button>
+    `
+  );
+}
+
+function saveHoliday(){
+
+  const title=document.getElementById("holidayTitle").value.trim();
+  const start=document.getElementById("holidayStart").value;
+  const end=document.getElementById("holidayEnd").value;
+  const type=document.getElementById("holidayType").value;
+
+  if(!title||!start||!end){
+    toast("Fill all holiday fields.");
+    return;
+  }
+
+  if(end<start){
+    toast("End date cannot be before start date.");
+    return;
+  }
+
+  DATA.holidays.push({
+    id:uid("holiday"),
+    title,
+    start,
+    end,
+    type
+  });
+
+  saveData();
+  closeModal();
+  toast("Calendar entry added.");
+  renderCalendar();
+}
+
+function deleteHoliday(id){
+
+  if(!confirm("Delete this calendar entry?")) return;
+
+  DATA.holidays=DATA.holidays.filter(h=>h.id!==id);
+
+  saveData();
+
+  toast("Calendar entry deleted.");
+
+  renderCalendar();
+}
+
+
+/* =========================================================
+   NOTICES
+   ========================================================= */
+
+function renderNotices(){
+
+  const page=document.getElementById("page-notices");
+
+  const notices=DATA.notices
+    .slice()
+    .sort((a,b)=>b.date.localeCompare(a.date));
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Notices</div>
+        <div class="section-desc">
+          Important academic announcements.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="noticeForm()">
+            + Add Notice
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="card">
+
+      ${
+        notices.length
+        ?notices.map(n=>`
+          <div class="notice-item">
+            <div style="display:flex;justify-content:space-between;gap:10px;">
+              <div>
+                <div class="notice-title">${esc(n.title)}</div>
+                <div class="notice-meta">
+                  ${formatDate(n.date)} • ${esc(n.priority||"Normal")}
+                </div>
+              </div>
+
+              ${
+                SESSION.role==="admin"
+                ?`
+                  <button class="btn btn-danger btn-sm"
+                          onclick="deleteNotice('${esc(n.id)}')">
+                    Delete
+                  </button>
+                `
+                :""
+              }
+            </div>
+
+            <div class="note-body">${esc(n.body)}</div>
+          </div>
+        `).join("")
+        :`<div class="empty">No notices available.</div>`
+      }
+
+    </div>
+  `;
+}
+
+function noticeForm(){
+
+  openModal(
+    "Add Notice",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="noticeTitle">
+      </div>
+
+      <div class="form-group">
+        <label>Date</label>
+        <input id="noticeDate" type="date" value="${today()}">
+      </div>
+
+      <div class="form-group">
+        <label>Priority</label>
+        <select id="noticePriority">
+          <option>Normal</option>
+          <option>Important</option>
+          <option>Urgent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Notice</label>
+        <textarea id="noticeBody"></textarea>
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveNotice()">Save</button>
+    `
+  );
+}
+
+function saveNotice(){
+
+  const title=document.getElementById("noticeTitle").value.trim();
+  const date=document.getElementById("noticeDate").value;
+  const priority=document.getElementById("noticePriority").value;
+  const body=document.getElementById("noticeBody").value.trim();
+
+  if(!title||!date||!body){
+    toast("Fill all notice fields.");
+    return;
+  }
+
+  DATA.notices.push({
+    id:uid("notice"),
+    title,
+    date,
+    priority,
+    body
+  });
+
+  saveData();
+  closeModal();
+  toast("Notice added.");
+  renderNotices();
+}
+
+function deleteNotice(id){
+
+  if(!confirm("Delete this notice?")) return;
+
+  DATA.notices=DATA.notices.filter(n=>n.id!==id);
+
+  saveData();
+
+  toast("Notice deleted.");
+
+  renderNotices();
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+function renderNotes(){
+
+  const page=document.getElementById("page-notes");
+
+  let notes=DATA.notes;
+
+  if(SESSION.role==="teacher"){
+    notes=notes.filter(
+      n=>!n.subject||n.subject===SESSION.subject
+    );
+  }
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Notes</div>
+        <div class="section-desc">
+          Subject-wise study material.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="noteForm()">
+            + Add Note
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="card">
+
+      ${
+        notes.length
+        ?notes.map(n=>`
+          <div class="resource-item">
+
+            <div style="display:flex;justify-content:space-between;gap:10px;">
+              <div>
+                <div class="notice-title">${esc(n.title)}</div>
+                <div class="notice-meta">
+                  ${esc(n.subject||"General")}
+                </div>
+              </div>
+
+              ${
+                SESSION.role==="admin"
+                ?`
+                  <button class="btn btn-danger btn-sm"
+                          onclick="deleteNote('${esc(n.id)}')">
+                    Delete
+                  </button>
+                `
+                :""
+              }
+            </div>
+
+            <div class="note-body">${esc(n.description)}</div>
+
+            ${
+              n.url
+              ?`
+                <div style="margin-top:9px;">
+                  <a href="${esc(safeUrl(n.url))}"
+                     target="_blank"
+                     rel="noopener"
+                     class="btn btn-light btn-sm">
+                    Open Note
+                  </a>
+                </div>
+              `
+              :""
+            }
+
+          </div>
+        `).join("")
+        :`<div class="empty">No notes available.</div>`
+      }
+
+    </div>
+  `;
+}
+
+function noteForm(){
+
+  openModal(
+    "Add Note",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="noteTitle">
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input id="noteSubject">
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="noteDescription"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>File / Resource URL (optional)</label>
+        <input id="noteUrl" placeholder="https://...">
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveNote()">Save</button>
+    `
+  );
+}
+
+function saveNote(){
+
+  const title=document.getElementById("noteTitle").value.trim();
+  const subject=document.getElementById("noteSubject").value.trim();
+  const description=document.getElementById("noteDescription").value.trim();
+  const url=document.getElementById("noteUrl").value.trim();
+
+  if(!title||!subject||!description){
+    toast("Fill required note fields.");
+    return;
+  }
+
+  DATA.notes.push({
+    id:uid("note"),
+    title,
+    subject,
+    description,
+    url
+  });
+
+  saveData();
+  closeModal();
+  toast("Note added.");
+  renderNotes();
+}
+
+function deleteNote(id){
+
+  if(!confirm("Delete this note?")) return;
+
+  DATA.notes=DATA.notes.filter(n=>n.id!==id);
+
+  saveData();
+
+  toast("Note deleted.");
+
+  renderNotes();
+}
+
+
+/* =========================================================
+   PYQS
+   ========================================================= */
+
+function renderPYQs(){
+
+  const page=document.getElementById("page-pyqs");
+
+  let pyqs=DATA.pyqs;
+
+  if(SESSION.role==="teacher"){
+    pyqs=pyqs.filter(
+      p=>!p.subject||p.subject===SESSION.subject
+    );
+  }
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Previous Year Questions</div>
+        <div class="section-desc">
+          Subject-wise PYQ resources.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="pyqForm()">
+            + Add PYQ
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="card">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Subject</th>
+              <th>Year</th>
+              <th>Resource</th>
+              ${
+                SESSION.role==="admin"
+                ?"<th>Action</th>"
+                :""
+              }
+            </tr>
+          </thead>
+
+          <tbody>
+            ${
+              pyqs.length
+              ?pyqs.map(p=>`
+                <tr>
+                  <td><b>${esc(p.title)}</b></td>
+                  <td>${esc(p.subject)}</td>
+                  <td>${esc(p.year)}</td>
+                  <td>
+                    ${
+                      p.url
+                      ?`
+                        <a href="${esc(safeUrl(p.url))}"
+                           target="_blank"
+                           rel="noopener"
+                           class="btn btn-light btn-sm">
+                          Open
+                        </a>
+                      `
+                      :"—"
+                    }
+                  </td>
+                  ${
+                    SESSION.role==="admin"
+                    ?`
+                      <td>
+                        <button class="btn btn-danger btn-sm"
+                                onclick="deletePYQ('${esc(p.id)}')">
+                          Delete
+                        </button>
+                      </td>
+                    `
+                    :""
+                  }
+                </tr>
+              `).join("")
+              :`
+                <tr>
+                  <td colspan="5">
+                    <div class="empty">No PYQs available.</div>
+                  </td>
+                </tr>
+              `
+            }
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  `;
+}
+
+function pyqForm(){
+
+  openModal(
+    "Add PYQ",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="pyqTitle">
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input id="pyqSubject">
+      </div>
+
+      <div class="form-group">
+        <label>Year</label>
+        <input id="pyqYear">
+      </div>
+
+      <div class="form-group">
+        <label>Resource URL</label>
+        <input id="pyqUrl" placeholder="https://...">
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="savePYQ()">Save</button>
+    `
+  );
+}
+
+function savePYQ(){
+
+  const title=document.getElementById("pyqTitle").value.trim();
+  const subject=document.getElementById("pyqSubject").value.trim();
+  const year=document.getElementById("pyqYear").value.trim();
+  const url=document.getElementById("pyqUrl").value.trim();
+
+  if(!title||!subject||!year){
+    toast("Fill required PYQ fields.");
+    return;
+  }
+
+  DATA.pyqs.push({
+    id:uid("pyq"),
+    title,
+    subject,
+    year,
+    url
+  });
+
+  saveData();
+  closeModal();
+  toast("PYQ added.");
+  renderPYQs();
+}
+
+function deletePYQ(id){
+
+  if(!confirm("Delete this PYQ?")) return;
+
+  DATA.pyqs=DATA.pyqs.filter(p=>p.id!==id);
+
+  saveData();
+
+  toast("PYQ deleted.");
+
+  renderPYQs();
+}
+
+
+/* =========================================================
+   VIDEOS
+   ========================================================= */
+
+function renderVideos(){
+
+  const page=document.getElementById("page-videos");
+
+  let videos=DATA.videos;
+
+  if(SESSION.role==="teacher"){
+    videos=videos.filter(
+      v=>!v.subject||v.subject===SESSION.subject
+    );
+  }
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Videos</div>
+        <div class="section-desc">
+          Lecture and learning video resources.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="videoForm()">
+            + Add Video
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="card">
+
+      ${
+        videos.length
+        ?videos.map(v=>`
+          <div class="resource-item">
+
+            <div style="display:flex;justify-content:space-between;gap:10px;">
+              <div>
+                <div class="notice-title">${esc(v.title)}</div>
+                <div class="notice-meta">
+                  ${esc(v.subject||"General")}
+                </div>
+              </div>
+
+              ${
+                SESSION.role==="admin"
+                ?`
+                  <button class="btn btn-danger btn-sm"
+                          onclick="deleteVideo('${esc(v.id)}')">
+                    Delete
+                  </button>
+                `
+                :""
+              }
+            </div>
+
+            <div class="note-body">
+              ${esc(v.description||"")}
+            </div>
+
+            ${
+              v.url
+              ?`
+                <div style="margin-top:9px;">
+                  <a href="${esc(safeUrl(v.url))}"
+                     target="_blank"
+                     rel="noopener"
+                     class="btn btn-primary btn-sm">
+                    ▶ Open Video
+                  </a>
+                </div>
+              `
+              :""
+            }
+
+          </div>
+        `).join("")
+        :`<div class="empty">No videos available.</div>`
+      }
+
+    </div>
+  `;
+}
+
+function videoForm(){
+
+  openModal(
+    "Add Video",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="videoTitle">
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input id="videoSubject">
+      </div>
+
+      <div class="form-group">
+        <label>Video URL</label>
+        <input id="videoUrl" placeholder="https://youtube.com/...">
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="videoDescription"></textarea>
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveVideo()">Save</button>
+    `
+  );
+}
+
+function saveVideo(){
+
+  const title=document.getElementById("videoTitle").value.trim();
+  const subject=document.getElementById("videoSubject").value.trim();
+  const url=document.getElementById("videoUrl").value.trim();
+  const description=document.getElementById("videoDescription").value.trim();
+
+  if(!title||!subject||!url){
+    toast("Fill required video fields.");
+    return;
+  }
+
+  DATA.videos.push({
+    id:uid("video"),
+    title,
+    subject,
+    url,
+    description
+  });
+
+  saveData();
+  closeModal();
+  toast("Video added.");
+  renderVideos();
+}
+
+function deleteVideo(id){
+
+  if(!confirm("Delete this video?")) return;
+
+  DATA.videos=DATA.videos.filter(v=>v.id!==id);
+
+  saveData();
+
+  toast("Video deleted.");
+
+  renderVideos();
+}
+
+
+/* =========================================================
+   RESOURCES
+   ========================================================= */
+
+function renderResources(){
+
+  const page=document.getElementById("page-resources");
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Academic Resources</div>
+        <div class="section-desc">
+          Useful external academic links.
+        </div>
+      </div>
+
+      ${
+        SESSION.role==="admin"
+        ?`
+          <button class="btn btn-primary"
+                  onclick="resourceForm()">
+            + Add Resource
+          </button>
+        `
+        :""
+      }
+    </div>
+
+    <div class="card">
+
+      ${
+        DATA.resources.length
+        ?DATA.resources.map(r=>`
+          <div class="resource-item">
+
+            <div style="display:flex;justify-content:space-between;gap:10px;">
+
+              <div>
+                <div class="notice-title">${esc(r.title)}</div>
+                <div class="notice-meta">
+                  ${esc(r.category||"General")}
+                </div>
+              </div>
+
+              ${
+                SESSION.role==="admin"
+                ?`
+                  <button class="btn btn-danger btn-sm"
+                          onclick="deleteResource('${esc(r.id)}')">
+                    Delete
+                  </button>
+                `
+                :""
+              }
+
+            </div>
+
+            <div class="note-body">
+              ${esc(r.description||"")}
+            </div>
+
+            <div style="margin-top:9px;">
+              <a href="${esc(safeUrl(r.url))}"
+                 target="_blank"
+                 rel="noopener"
+                 class="btn btn-light btn-sm">
+                Open Resource
+              </a>
+            </div>
+
+          </div>
+        `).join("")
+        :`<div class="empty">No resources available.</div>`
+      }
+
+    </div>
+  `;
+}
+
+function resourceForm(){
+
+  openModal(
+    "Add Resource",
+    `
+      <div class="form-group">
+        <label>Title</label>
+        <input id="resourceTitle">
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <input id="resourceCategory">
+      </div>
+
+      <div class="form-group">
+        <label>URL</label>
+        <input id="resourceUrl" placeholder="https://...">
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="resourceDescription"></textarea>
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveResource()">Save</button>
+    `
+  );
+}
+
+function saveResource(){
+
+  const title=document.getElementById("resourceTitle").value.trim();
+  const category=document.getElementById("resourceCategory").value.trim();
+  const url=document.getElementById("resourceUrl").value.trim();
+  const description=document.getElementById("resourceDescription").value.trim();
+
+  if(!title||!url){
+    toast("Title and URL are required.");
+    return;
+  }
+
+  if(!/^https?:\/\//i.test(url)){
+    toast("URL must start with http:// or https://");
+    return;
+  }
+
+  DATA.resources.push({
+    id:uid("resource"),
+    title,
+    category,
+    url,
+    description
+  });
+
+  saveData();
+  closeModal();
+  toast("Resource added.");
+  renderResources();
+}
+
+function deleteResource(id){
+
+  if(!confirm("Delete this resource?")) return;
+
+  DATA.resources=DATA.resources.filter(r=>r.id!==id);
+
+  saveData();
+
+  toast("Resource deleted.");
+
+  renderResources();
+}
+
+
+/* =========================================================
+   DATA MANAGEMENT
+   ========================================================= */
+
+function renderDataManagement(){
+
+  if(SESSION.role!=="admin") return;
+
+  const page=document.getElementById("page-data");
+
+  page.innerHTML=`
+    <div class="section-head">
+      <div>
+        <div class="section-title">Data Management</div>
+        <div class="section-desc">
+          Backup, restore and generate the updated single-file portal.
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-banner">
+      <b>Important:</b> This portal stores its working data in browser localStorage.
+      Use <b>Download JSON Backup</b> before clearing data if you want a copy.
+      <br>
+      <b>Restore JSON</b> replaces the current portal data with the selected backup.
+    </div>
+
+    <div class="stats-grid">
+
+      ${statCard("Students",DATA.students.length,"Total records")}
+      ${statCard("Teachers",DATA.teachers.length,"Total records")}
+      ${statCard("Attendance Rows",DATA.attendance.length,"Saved records")}
+      ${statCard("Notices",DATA.notices.length,"Published notices")}
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">Backup & Restore</div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <button class="btn btn-primary"
+                onclick="downloadBackup()">
+          ↓ Download JSON Backup
+        </button>
+
+        <label class="btn btn-light">
+          ↑ Restore JSON
+          <input type="file"
+                 id="restoreFile"
+                 accept=".json,application/json"
+                 onchange="restoreBackup(event)"
+                 style="display:none;">
+        </label>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">Updated App</div>
+
+      <p style="font-size:12px;color:#64748b;line-height:1.6;margin-bottom:15px;">
+        Save all current browser data inside a new standalone HTML file.
+        The generated file contains the current students, teachers,
+        attendance, notices and academic resources.
+      </p>
+
+      <button class="btn btn-success"
+              onclick="generateUpdatedApp()">
+        ⚡ Generate Updated App
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">Demo Data</div>
+
+      <p style="font-size:12px;color:#64748b;line-height:1.6;margin-bottom:15px;">
+        Restore the complete sample/demo setup including teachers,
+        students, holidays and attendance records.
+      </p>
+
+      <button class="btn btn-warning"
+              onclick="loadDemoData()">
+        Restore Demo Data
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">Master Password</div>
+
+      <button class="btn btn-dark"
+              onclick="changeMasterPassword()">
+        Change Master Password
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-title">Danger Zone</div>
+
+      <p style="font-size:12px;color:#64748b;line-height:1.6;margin-bottom:15px;">
+        Permanently clear all portal records stored in this browser:
+        students, teachers, passwords, attendance, holidays, notices,
+        notes, PYQs, videos and resources. The Administrator master
+        password is preserved so a backup can still be restored.
+      </p>
+
+      <button class="btn btn-danger"
+              onclick="clearAllData()">
+        Clear ALL Local Data
+      </button>
+
+    </div>
+  `;
+}
+
+function downloadBackup(){
+
+  if(SESSION.role!=="admin"){
+    toast("Administrator access required.");
+    return;
+  }
+
+  // Export every portal data collection currently stored in DATA.
+  const backup=clone(DATA);
+  backup.backupVersion=1;
+  backup.backupCreatedAt=new Date().toISOString();
+  backup.backupApp="KKW B.Ed Digital Hub";
+
+  const json=JSON.stringify(backup,null,2);
+  const blob=new Blob([json],{type:"application/json;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+
+  a.href=url;
+  a.download="KKW_BED_Digital_Hub_Backup_"+today()+".json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  toast("Complete portal backup downloaded.");
+}
+
+function restoreBackup(event){
+
+  const file=event.target.files?.[0];
+
+  if(!file) return;
+
+  const reader=new FileReader();
+
+  reader.onload=function(){
+
+    try{
+
+      const raw=JSON.parse(reader.result);
+      const imported=normalizeData(raw);
+
+      if(!Array.isArray(imported.students) ||
+         !Array.isArray(imported.teachers) ||
+         !Array.isArray(imported.attendance) ||
+         !Array.isArray(imported.holidays) ||
+         !Array.isArray(imported.notices) ||
+         !Array.isArray(imported.notes) ||
+         !Array.isArray(imported.pyqs) ||
+         !Array.isArray(imported.videos) ||
+         !Array.isArray(imported.resources)){
+        throw new Error("Invalid or incomplete backup structure.");
+      }
+
+      if(!confirm(
+        "Restore this backup?\n\nCurrent local data will be replaced."
+      )){
+        event.target.value="";
+        return;
+      }
+
+      DATA=imported;
+
+      DATA.initialized=true;
+      DATA.seedDemo=false;
+
+      saveData();
+
+      populateTeacherLogin();
+
+      toast("Backup restored.");
+
+      renderDataManagement();
+
+    }catch(error){
+
+      console.error(error);
+
+      toast("Invalid JSON backup file.");
+    }
+
+    event.target.value="";
+  };
+
+  reader.readAsText(file);
+}
+
+function loadDemoData(){
+
+  if(!confirm(
+    "Restore demo data?\n\nThis will replace current local data."
+  )) return;
+
+  DATA=buildDemoData();
+
+  saveData();
+
+  populateTeacherLogin();
+
+  toast("Demo data restored.");
+
+  renderDataManagement();
+}
+
+function createEmptyData(){
+
+  // Keep only the Administrator password so Admin can log in after a wipe.
+  // All teacher/student accounts, passwords and portal records are removed.
+  return {
+    version:1,
+    initialized:true,
+    seedDemo:false,
+    masterPass:DATA.masterPass || "KKWAGH",
+    teachers:[],
+    students:[],
+    attendance:[],
+    holidays:[],
+    notices:[],
+    notes:[],
+    pyqs:[],
+    videos:[],
+    resources:[]
+  };
+}
+
+function clearAllData(){
+
+  if(SESSION.role!=="admin"){
+    toast("Administrator access required.");
+    return;
+  }
+
+  const ok=confirm(
+    "PERMANENTLY CLEAR ALL PORTAL DATA?\n\n"+
+    "This will remove ALL teacher records, student records, "+
+    "teacher/student passwords, attendance, holidays, notices, "+
+    "notes, PYQs, videos and resources from this browser.\n\n"+
+    "The Administrator master password will be kept so you can "+
+    "log in and restore a backup.\n\n"+
+    "Click OK to continue."
+  );
+
+  if(!ok) return;
+
+  localStorage.removeItem(STORAGE_KEY);
+  sessionStorage.removeItem("kkw_session");
+
+  DATA=createEmptyData();
+  saveData();
+
+  SESSION={role:null,userId:null,name:null,subject:null};
+
+  populateTeacherLogin();
+  changeLoginRole();
+
+  document.getElementById("appShell").classList.add("hidden");
+  document.getElementById("loginScreen").classList.remove("hidden");
+  document.getElementById("loginRole").value="admin";
+  changeLoginRole();
+
+  toast("All portal data cleared. Admin access is preserved.");
+}
+
+function changeMasterPassword(){
+
+  openModal(
+    "Change Master Password",
+    `
+      <div class="form-group">
+        <label>Current Password</label>
+        <input id="oldMaster" type="password">
+      </div>
+
+      <div class="form-group">
+        <label>New Password</label>
+        <input id="newMaster" type="password">
+      </div>
+
+      <div class="form-group">
+        <label>Confirm New Password</label>
+        <input id="confirmMaster" type="password">
+      </div>
+    `,
+    `
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary"
+              onclick="saveMasterPassword()">
+        Change Password
+      </button>
+    `
+  );
+}
+
+function saveMasterPassword(){
+
+  const oldPass=document.getElementById("oldMaster").value;
+  const newPass=document.getElementById("newMaster").value;
+  const confirmPass=document.getElementById("confirmMaster").value;
+
+  if(oldPass!==DATA.masterPass){
+    toast("Current password is incorrect.");
+    return;
+  }
+
+  if(!newPass||newPass.length<4){
+    toast("New password must be at least 4 characters.");
+    return;
+  }
+
+  if(newPass!==confirmPass){
+    toast("New passwords do not match.");
+    return;
+  }
+
+  DATA.masterPass=newPass;
+
+  saveData();
+
+  closeModal();
+
+  toast("Master password changed.");
+}
+
+
+/* =========================================================
+   GENERATE UPDATED APP
+   ========================================================= */
+
+function generateUpdatedApp(){
+
+  try{
+
+    saveData();
+
+    let html=document.documentElement.outerHTML;
+
+    const regex=
+      /const EMBEDDED_DATA=\/\*__EMBEDDED_DATA__\*\/[\s\S]*?\/\*__EMBEDDED_DATA_END__\*\/;/;
+
+    const json=JSON.stringify(DATA)
+      .replace(/</g,"\\u003c");
+
+    const replacement=
+      "const EMBEDDED_DATA=/*__EMBEDDED_DATA__*/"+
+      json+
+      "/*__EMBEDDED_DATA_END__*/;";
+
+    if(!regex.test(html)){
+
+      toast("Embedded data marker was not found.");
+
+      return;
+    }
+
+    html=html.replace(regex,replacement);
+
+    const blob=new Blob(
+      [html],
+      {type:"text/html;charset=utf-8"}
+    );
+
+    const url=URL.createObjectURL(blob);
+
+    const a=document.createElement("a");
+
+    a.href=url;
+    a.download="KKW_BED_Digital_Hub_Updated.html";
+
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    setTimeout(()=>{
+      URL.revokeObjectURL(url);
+    },1000);
+
+    toast("Updated HTML generated successfully.");
+
+  }catch(error){
+
+    console.error(error);
+
+    toast("Could not generate updated app.");
+  }
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+populateTeacherLogin();
+changeLoginRole();
+restoreSession();
+
+</script>
+</body>
+</html>
